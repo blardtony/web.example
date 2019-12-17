@@ -1,0 +1,22 @@
+<form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+  <div class="form-container">
+    <div class="row columns">
+      <h1>S'inscrire</h1>
+
+      <label for="name">Name</label>
+      <input type="text" formControlName="name" id="name">
+      <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{ titleAlert }}</div>
+
+
+      <label for="email">Email</label>
+      <input type="email" formControlName="email" id="email">
+      <div class="alert" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">{{ titleAlert }}</div>
+
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" id="password">
+      <div class="alert" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">{{ titleAlert }}</div>
+
+      <input type="submit" class="button expanded" value="S'inscrire">
+    </div>
+  </div>
+</form>
