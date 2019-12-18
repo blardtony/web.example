@@ -1,9 +1,10 @@
 <template>
     <div id="login">
-        <h1>Login</h1>
-        <input type="text" name="username" v-model="input.username" placeholder="Username" />
-        <input type="password" name="password" v-model="input.password" placeholder="Password" />
-        <button type="button" v-on:click="login()">Login</button>
+        <h1>Se connecter</h1>
+        <input type="text" name="username" v-model="input.username" placeholder="Nom" />
+        <input type="password" name="password" v-model="input.password" placeholder="Mot de passe" />
+        <button type="button" v-on:click="login()">Se connecter</button>
+        <router-link to="/register"><button type="button" name="button">S'inscrire</button></router-link>
     </div>
 </template>
 
@@ -26,9 +27,11 @@
                 this.$router.replace({ name: "secure" });
             } else {
                 console.log("The username and / or password is incorrect");
+                alert("The username and / or password is incorrect");
             }
         } else {
             console.log("A username and password must be present");
+            alert("A username and password must be present");
         }
       }
     }
